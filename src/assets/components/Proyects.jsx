@@ -10,7 +10,7 @@ const CarrouselCtn = styled.section`
   justify-content: center;
   position: relative;
   overflow: hidden;
-  height: 400px;
+  height: 200px;
 `
 
 const Image = styled.img`

@@ -10,6 +10,7 @@ import Contact from './assets/components/Contact'
 const Header = styled.header`
   background-color: #010d13;
   height: 300px;
+  width: 100%;
   border-radius: 0px 0px 50% 50%;
   display: flex;
   align-items: center;
@@ -18,11 +19,18 @@ const Header = styled.header`
 `
 const NewenImg = styled.img`
   max-width: 600px;
+  max-height: 140px;
+  object-fit: contain;
+
+  @media (max-width: 700px) {
+    width: 350px;
+  }
 `
 const Subtitle = styled.p`
   text-align: center;
   color: #cfed8e;
   font-size: 25px;
+  width: 100%;
 `
 export default function App() {
   return (
@@ -145,7 +153,8 @@ export default function App() {
 }
 
 const SectionWrapper = styled.section`
-  padding: 4em;
+  padding-block: 4em;
+
   display: flex;
   flex-direction: column;
   gap: 3em;
@@ -153,6 +162,7 @@ const SectionWrapper = styled.section`
 
 const ContentWrapper = styled.div`
   padding-inline: 1em;
+  
   display: flex;
   flex-direction: column;
 `
@@ -161,7 +171,11 @@ const CardsCtn = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
+
   gap: 25px;
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
 `
 
 const StackCtn = styled.section`

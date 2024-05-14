@@ -13,6 +13,7 @@ export default function StackRow({ text, icon }) {
 
 const StackText = styled.p`
   width: 50px;
+
 `
 
 const StackImgCtn = styled.div`
@@ -20,6 +21,7 @@ const StackImgCtn = styled.div`
   align-items: center;
   justify-content: center;
   width: 100px;
+
   height: 100%;
   padding: 15px;
   & svg {
@@ -37,4 +39,13 @@ const StackRowCtn = styled.div`
   align-items: center;
   padding-right: 20px;
   justify-content: center;
+  @media (max-width: 700px) {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    padding: 15px;
+    flex-direction: column;
+    display: flex;
+    text-align: center;
+  }
 `

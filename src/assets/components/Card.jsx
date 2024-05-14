@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function Card({ items, price,title }) {
+export default function Card({ items, price, title }) {
   return (
     <>
       <CardCtn>
@@ -37,7 +37,7 @@ const Price = styled.p`
   color: #fff;
   text-align: center;
   font-size: 20px;
-padding: 10px;
+  padding: 10px;
   font-weight: 500;
 `
 
@@ -47,6 +47,7 @@ const ItemsCtn = styled.div`
   flex-direction: column;
   padding: 20px;
   gap: 10px;
+
   height: 200px;
   & svg {
     width: 25px;
@@ -59,6 +60,9 @@ const CardCtn = styled.div`
   width: 300px;
   border-radius: 32px;
   padding-top: 20px;
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 `
 
 const Title = styled.h2`
@@ -80,7 +84,6 @@ const ItemButton = styled.button`
   border-radius: 0px 0px 32px 32px;
   background-color: #5990ae;
   height: 40px;
-
   cursor: pointer;
   &:hover {
     background-color: #8bc1de;

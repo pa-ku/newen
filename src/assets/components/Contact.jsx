@@ -14,32 +14,42 @@ const ContactoCtn = styled.footer`
   flex-direction: column;
   gap: 20px;
   background: linear-gradient(to bottom, #010d13, #17262f);
+padding-inline: 1em;
+@media(max-width:700px){
+    border-radius: 10% 10% 0px 0px;
+}
 `
 const Input = styled.input`
   background-color: #17262f;
   border: 0px;
   border-radius: 20px;
   font-size: 20px;
-  width: 700px;
+  width: 600px;
   padding-inline: 20px;
   padding-block: 10px;
   color: #fff;
+  @media(max-width:700px){
+  width: 100%;
+  }
 `
 const InputArea = styled.textarea`
   background-color: #17262f;
   border: 0px;
   border-radius: 20px;
   font-size: 20px;
-  width: 700px;
+  width: 600px;
   height: 200px;
   padding-inline: 20px;
   padding-block: 10px;
   color: #fff;
+  @media(max-width:700px){
+  width: 100%;
+  }
 `
 const SendButton = styled.button`
   border: 0px;
   background-color: #a2ff81;
-  width: 700px;
+  width: 600px;
   padding: 10px;
   border-radius: 20px;
   font-size: 20px;
@@ -47,6 +57,9 @@ const SendButton = styled.button`
   transition: 200ms;
   &:hover {
     background-color: #c1ffaa;
+  }
+  @media(max-width:700px){
+  width: 100%;
   }
 `
 export default function Contact() {
