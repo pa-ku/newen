@@ -36,7 +36,7 @@ export default function Card({ items, price, title, icon }) {
 const CardCtn = styled.div`
   background-color: #010d13;
   width: 350px;
-  box-shadow: 10px 10px 20px 0px #031c29;
+  box-shadow: 10px 10px 20px 2px #222e3498;
   border-radius: 32px;
   padding-block: 20px;
   padding-inline: 30px;
