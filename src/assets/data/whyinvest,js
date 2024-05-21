@@ -1,0 +1,32 @@
+import chart from '../svg/chart.svg'
+import mobile from '../svg/mobile.svg'
+import stars from '../svg/stars.svg'
+import eye from '../svg/eye.svg'
+import light from '../svg/light.svg'
+
+export const data = [
+  {
+    title: 'Presencia mobile',
+    description:
+      'La cual representa 72,9% del total de las ventas de comercio electrónico.',
+    icon: mobile,
+  },
+  {
+    title: 'Mejora en la imagen de marca',
+    description:
+      'Refuerza la percepción de tu marca, transmitiendo confianza y profesionalismo a tus clientes.',
+    icon: stars,
+  },
+  {
+    title: 'Mayor visibilidad y alcance',
+    description:
+      'Lleva tu mensaje y productos a más personas en cualquier rincón del mundo.',
+    icon: eye,
+  },
+
+  {
+    title: 'Facilidad de acceso a información',
+    description: 'Facilita la toma de decisiones y mejorando su experiencia.',
+    icon: light,
+  },
+]

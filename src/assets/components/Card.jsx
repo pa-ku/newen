@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function Card({ items, price, title }) {
+export default function Card({ items, price, title, icon }) {
   return (
     <>
       <CardCtn>
-        <Title>{title}</Title>
+     
+        <Title>{icon}{title}</Title>
+        <Price>{price}</Price>
         <ItemsCtn>
           {items.map((text) => (
             <Item>
@@ -26,49 +28,60 @@ export default function Card({ items, price, title }) {
             </Item>
           ))}
         </ItemsCtn>
-        <Price>{price}</Price>
-        <ItemButton>Saber max</ItemButton>
       </CardCtn>
     </>
   )
 }
 
+const CardCtn = styled.div`
+  background-color: #010d13;
+  width: 350px;
+  box-shadow: 10px 10px 20px 0px #031c29;
+  border-radius: 32px;
+  padding-block: 20px;
+  padding-inline: 30px;
+  transition: 200ms;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
+`
+
 const Price = styled.p`
   color: #fff;
-  text-align: center;
-  font-size: 20px;
-  padding: 10px;
+  text-align: start;
+  font-size: 18px;
   font-weight: 500;
+  color: #bdbdbd;
 `
 
 const ItemsCtn = styled.div`
   color: #fff;
   display: flex;
   flex-direction: column;
-  padding: 20px;
   gap: 10px;
-
-  height: 200px;
+  height: 300px;
+  padding-top: 20px;
   & svg {
     width: 25px;
     height: 25px;
   }
 `
 
-const CardCtn = styled.div`
-  background-color: #010d13;
-  width: 300px;
-  border-radius: 32px;
-  padding-top: 20px;
-  @media (max-width: 700px) {
-    width: 100%;
-  }
-`
-
 const Title = styled.h2`
   color: #fff;
-  text-align: center;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  font-size: 30px;
+  & svg{
+width: 35px;
+height: 35px;
+}
 `
 
 const Item = styled.p`

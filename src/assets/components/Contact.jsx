@@ -15,8 +15,8 @@ const ContactoCtn = styled.footer`
   gap: 20px;
   background: linear-gradient(to bottom, #010d13, #17262f);
 padding-inline: 1em;
-@media(max-width:700px){
-    border-radius: 10% 10% 0px 0px;
+@media(max-width:1000px){
+  border-radius: 40px 40px 0px 0px;
 }
 `
 const Input = styled.input`

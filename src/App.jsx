@@ -6,6 +6,7 @@ import Title from './assets/components/Title'
 import Card from './assets/components/Card'
 import Proyects from './assets/components/Proyects'
 import Contact from './assets/components/Contact'
+import WhyInvest from './assets/components/WhyInvest'
 
 const Header = styled.header`
   background-color: #010d13;
@@ -42,6 +43,11 @@ export default function App() {
         </div>
       </Header>
       <ContentWrapper>
+        <SectionWrapper>
+          <Title>Por que invertir en una pagina web?</Title>
+          <WhyInvest />
+        </SectionWrapper>
+
         <SectionWrapper>
           <Title>Que tecnologias utilizamos?</Title>
           <StackCtn>
@@ -116,33 +122,78 @@ export default function App() {
         </SectionWrapper>
 
         <SectionWrapper>
-          <Title>Elegi tu estilo de proyecto</Title>
+          <Title>Nuestros servicios</Title>
           <CardsCtn>
             <Card
               title={'Sitio estatico'}
-              price={'40.000'}
+              price={'ARS 50.000 - 70.000'}
+              icon={
+                <svg
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="#c9de00"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+                  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                </svg>
+              }
               items={['Pagina Home', 'Seccion de contacto', 'Redes Sociales']}
             />
             <Card
               title={'Catalogo'}
-              price={'80.000'}
+              icon={
+                <svg
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="#c9de00"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
+                  <path d="M4 14m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
+                </svg>
+              }
+              price={'ARS 100.000 - 150.000'}
               items={['Catalogo de componentes', 'testing', 'testing']}
             />
             <Card
-              title={'ecommerce'}
+              title={'E-commerce'}
+              icon={
+                <svg
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="#c9de00"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                  <path d="M13.5 17h-7.5v-14h-2" />
+                  <path d="M6 5l14 1l-.858 6.004m-2.642 .996h-10.5" />
+                  <path d="M19 16l-2 3h4l-2 3" />
+                </svg>
+              }
               items={[
                 'Pagina de inicio',
                 'Compras online',
                 'Catalogo de productos',
                 'Edicion de productos online',
               ]}
-              price={'120.000'}
+              price={'ARS 200.000 - 300.000'}
             />
           </CardsCtn>
         </SectionWrapper>
       </ContentWrapper>
       <SectionWrapper>
-        <Title>Ejemplos</Title>
+        <Title>Proyectos</Title>
 
         <Proyects />
       </SectionWrapper>
@@ -154,7 +205,7 @@ export default function App() {
 
 const SectionWrapper = styled.section`
   padding-block: 4em;
-
+  color: #fff;
   display: flex;
   flex-direction: column;
   gap: 3em;
@@ -162,7 +213,7 @@ const SectionWrapper = styled.section`
 
 const ContentWrapper = styled.div`
   padding-inline: 1em;
-  
+
   display: flex;
   flex-direction: column;
 `
@@ -171,7 +222,7 @@ const CardsCtn = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
-
+  position: relative;
   gap: 25px;
   @media (max-width: 700px) {
     flex-direction: column;
