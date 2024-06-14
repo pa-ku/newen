@@ -19,13 +19,13 @@ export const data = [
   {
     title: '+ Visibilidad',
     description:
-      'Lleva tu mensaje y productos a más personas en cualquier rincón del mundo.',
+      'Lleva tu mensaje y producto al alcance de todos',
     icon: eye,
   },
 
   {
     title: 'Acceso a información',
-    description: 'Facilita la toma de decisiones y mejora su experiencia como usuario.',
+    description: 'Facilita la toma de decisiones y mejora la experiencia del usuario.',
     icon: light,
   },
 ]
