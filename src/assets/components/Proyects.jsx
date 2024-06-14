@@ -1,82 +1,63 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
+import React, { useEffect, useState } from 'react'
 import FlyImg from '../../assets/img/PageFlybondi.webp'
 import MenuImg from '../../assets/img/menuBackground.webp'
 import ErideImg from '../../assets/img/EridePageImage.webp'
 
-const CarrouselCtn = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  height: 200px;
-`
-
-const Image = styled.img`
-  box-shadow: 0px 0px 30px 10px #112835;
-  border-radius: 32px;
-  z-index: 2;
-  scale: 0.8;
-  transition: 400ms;
-  cursor: pointer;
-  position: absolute;
-  scale: ${(props) => props.scale};
-  translate: ${(props) => props.translate};
-  filter: grayscale(${(props) => props.gray});
-`
-
 export default function Proyects() {
-  const [animationState, setAnimationState] = useState({
-    fly: { position: '0em', scale: 1, gray: 0 },
-    menu: { position: '-47em', scale: 0.8, gray: 1 },
-    eride: { position: '47em', scale: 0.8, gray: 1 },
-  })
+  const images = [FlyImg, MenuImg, ErideImg]
+  return (
+    <>
+      <div className='flex  w-full overflow-hidden items-center justify-center'>
+        <Carousel images={images} />
+      </div>
+    </>
+  )
+}
+// Carousel.js
 
-  function updateAnimationState(projectName) {
-    setAnimationState((prevState) => {
-      const updatedState = {
-        fly: { position: prevState.fly.position, scale: 0.8, gray: 1 },
-        menu: { position: '-47em', scale: 0.8, gray: 1 },
-        eride: { position: '47em', scale: 0.8, gray: 1 },
-      }
+function Carousel({ images }) {
+  const [currentIndex, setCurrentIndex] = useState(1)
 
-      if (projectName === 'eride') {
-        updatedState.fly.position = '47em'
-      } else {
-        updatedState.fly.position = '-47em'
-      }
-
-      updatedState[projectName] = { position: '0em', scale: 1, gray: 0 }
-
-      return updatedState
-    })
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
   }
 
-  function renderImages() {
-    return Object.keys(animationState).map((projectName) => (
-      <Image
-        key={projectName}
-        gray={animationState[projectName].gray}
-        translate={animationState[projectName].position}
-        scale={animationState[projectName].scale}
-        name={projectName}
-        onClick={() => updateAnimationState(projectName)}
-        src={
-          projectName === 'fly'
-            ? FlyImg
-            : projectName === 'menu'
-            ? MenuImg
-            : ErideImg
-        }
-        alt=""
-      />
-    ))
+  const prevSlide = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    )
   }
 
   return (
-    <>
-      <CarrouselCtn>{renderImages()}</CarrouselCtn>
-    </>
+    <div className='relative w-[48em]  duration-200   '>
+      <div
+        className='flex  transition-linear duration-500'
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {images.map((img, index) => (
+          <>
+            <img
+              className='w-full px-5 h-80 flex brightness-90 hover:brightness-100 items-center justify-center  object-contain cursor rounded-xl'
+              key={index}
+              src={img}
+              onClick={() => setCurrentIndex(index)}
+              alt=''
+            />
+          </>
+        ))}
+      </div>
+      <button
+        className='flex xl:hidden absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-xl p-3'
+        onClick={prevSlide}
+      >
+        &#9664;
+      </button>
+      <button
+        className='flex xl:hidden absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-xl p-3'
+        onClick={nextSlide}
+      >
+        &#9654;
+      </button>
+    </div>
   )
 }

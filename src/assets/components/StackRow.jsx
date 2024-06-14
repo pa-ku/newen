@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export default function StackRow({ text, icon }) {
   return (
     <>
-      <StackRowCtn>
+      <StackRowCtn className='w-[40em]'>
         <StackImgCtn>{icon}</StackImgCtn>
         <StackText>{text}</StackText>
       </StackRowCtn>
@@ -13,7 +13,6 @@ export default function StackRow({ text, icon }) {
 
 const StackText = styled.p`
   width: 50px;
-
 `
 
 const StackImgCtn = styled.div`
@@ -33,11 +32,12 @@ const StackImgCtn = styled.div`
 const StackRowCtn = styled.div`
   background-color: #253036;
   height: 90px;
-  max-width: 800px;
+
   border-radius: 37px;
   display: flex;
   align-items: center;
-  padding-right: 20px;
+  padding-right: 1em;
+
   justify-content: center;
   @media (max-width: 700px) {
     height: 100%;

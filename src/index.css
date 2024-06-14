@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *,
 *::before,
 *::after {
@@ -7,11 +11,26 @@
 }
 
 :root {
+  --main-color-200: #415959;
   --main-color-300: #283434;
+  --main-color-400: #142323;
   --main-color-500: #10181d;
   --main-color-700: #080c14;
 }
 
 body {
   background-color: #10181d;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+background-color: #333;
+width: 17px;
+}
+::-webkit-scrollbar-thumb {
+background-color: #aaaaaa;
+border: 3.2px solid #333;
+}
+::-webkit-scrollbar-thumb:hover {
+background-color: #777;
 }

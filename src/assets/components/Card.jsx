@@ -4,25 +4,27 @@ import styled from 'styled-components'
 export default function Card({ items, price, title, icon }) {
   return (
     <>
-      <CardCtn>
-     
-        <Title>{icon}{title}</Title>
-        <Price>{price}</Price>
+      <CardCtn className='animate-chroma py-5'>
+        <Title className='text-green-100'>
+          {icon}
+          {title}
+        </Title>
+        <p className='text-gray-300'>{price}</p>
         <ItemsCtn>
           {items.map((text) => (
-            <Item>
+            <Item className='text-gray-400'>
               <svg
-                width="100"
-                height="100"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="#CFED8E"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                width='100'
+                height='100'
+                viewBox='0 0 24 24'
+                stroke-width='1.5'
+                stroke='#CFED8E'
+                fill='none'
+                stroke-linecap='round'
+                stroke-linejoin='round'
               >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M5 12l5 5l10 -10" />
+                <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                <path d='M5 12l5 5l10 -10' />
               </svg>{' '}
               {text}
             </Item>
@@ -34,27 +36,13 @@ export default function Card({ items, price, title, icon }) {
 }
 
 const CardCtn = styled.div`
-  background-color: #010d13;
-  width: 350px;
-  box-shadow: 10px 10px 20px 2px #222e3498;
-  border-radius: 32px;
-  padding-block: 20px;
-  padding-inline: 30px;
+  padding-inline: 3em;
   transition: 200ms;
   display: flex;
   flex-direction: column;
-
   @media (max-width: 700px) {
     width: 100%;
   }
-`
-
-const Price = styled.p`
-  color: #fff;
-  text-align: start;
-  font-size: 18px;
-  font-weight: 500;
-  color: #bdbdbd;
 `
 
 const ItemsCtn = styled.div`
@@ -71,17 +59,16 @@ const ItemsCtn = styled.div`
 `
 
 const Title = styled.h2`
-  color: #fff;
   font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: start;
   gap: 10px;
   font-size: 30px;
-  & svg{
-width: 35px;
-height: 35px;
-}
+  & svg {
+    width: 35px;
+    height: 35px;
+  }
 `
 
 const Item = styled.p`
@@ -89,16 +76,4 @@ const Item = styled.p`
   align-items: center;
   justify-content: start;
   gap: 10px;
-`
-
-const ItemButton = styled.button`
-  width: 100%;
-  border: 0px;
-  border-radius: 0px 0px 32px 32px;
-  background-color: #5990ae;
-  height: 40px;
-  cursor: pointer;
-  &:hover {
-    background-color: #8bc1de;
-  }
 `

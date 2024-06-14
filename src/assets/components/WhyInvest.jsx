@@ -12,7 +12,7 @@ const GridWrapper = styled.div`
 
 const GridCtn = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 350px);
+  grid-template-columns: repeat(2, 20em);
   grid-gap: 20px;
   row-gap: 50px;
 
@@ -29,6 +29,7 @@ const GridItem = styled.div`
   display: flex;
   position: relative;
   gap: 5px;
+
   flex-direction: column;
 `
 
@@ -53,9 +54,11 @@ export default function WhyInvest() {
           {data.map((item) => (
             <>
               <GridItem>
-                <Icon src={item.icon} alt="" />
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+                <Icon src={item.icon} alt='' />
+                <h2 className=' text-white text-xl font-medium'>
+                  {item.title}
+                </h2>
+                <p className='text-gray-400'>{item.description}</p>
               </GridItem>
             </>
           ))}

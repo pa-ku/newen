@@ -8,25 +8,24 @@ export const data = [
   {
     title: 'Presencia mobile',
     description:
-      'La cual representa 72,9% del total de las ventas de comercio electrónico.',
+      'Representa 72,9% del total de las ventas de comercio electrónico.',
     icon: mobile,
   },
   {
-    title: 'Mejora en la imagen de marca',
-    description:
-      'Refuerza la percepción de tu marca, transmitiendo confianza y profesionalismo a tus clientes.',
+    title: 'Imagen de marca',
+    description: 'Transmite confianza y profesionalismo a tus clientes.',
     icon: stars,
   },
   {
-    title: 'Mayor visibilidad y alcance',
+    title: '+ Visibilidad',
     description:
       'Lleva tu mensaje y productos a más personas en cualquier rincón del mundo.',
     icon: eye,
   },
 
   {
-    title: 'Facilidad de acceso a información',
-    description: 'Facilita la toma de decisiones y mejorando su experiencia.',
+    title: 'Acceso a información',
+    description: 'Facilita la toma de decisiones y mejora su experiencia como usuario.',
     icon: light,
   },
 ]
