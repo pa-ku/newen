@@ -7,40 +7,21 @@ import Contact from './assets/components/Contact'
 import WhyInvest from './assets/components/WhyInvest'
 import Technology from './assets/components/Technology'
 
-const Header = styled.header`
-  background-color: #010d13;
-  height: 300px;
-  width: 100%;
-  border-radius: 0px 0px 50% 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(to top, #010d13, #17262f);
-`
-const NewenImg = styled.img`
-  max-width: 400px;
-
-  object-fit: contain;
-  @media (max-width: 700px) {
-    width: 350px;
-    max-width: 300px;
-  }
-`
-const Subtitle = styled.p`
-  text-align: center;
-  color: #cfed8e;
-  font-size: 25px;
-  width: 100%;
-`
 export default function App() {
   return (
     <>
-      <Header>
+      <header className='flex items-center justify-center bg-gradient-to-t from-[#010d13] to-[#17262f] rounded-b-[50%] rounded-none h-56 md:h-80'>
         <div>
-          <NewenImg className='py-5' src={newenLogo} alt='' />
-          <Subtitle>Tu idea realidad</Subtitle>
+          <img
+            className='md:w-[28em] w-72 object-contain w-full py-5'
+            src={newenLogo}
+            alt=''
+          />
+          <p className='text-center text-xl md:text-2xl text-[#cfed8e]'>
+            Tu idea realidad
+          </p>
         </div>
-      </Header>
+      </header>
       <div className='py-20 space-y-24'>
         <section className='px-2 space-y-20'>
           <Title>Por que invertir en una pagina web?</Title>
@@ -152,7 +133,6 @@ const CardsCtn = styled.main`
   align-items: center;
   justify-content: center;
   position: relative;
-
   div:nth-child(1) {
     border-right: 1px solid var(--main-color-200);
   }

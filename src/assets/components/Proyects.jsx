@@ -37,7 +37,7 @@ function Carousel({ images }) {
         {images.map((img, index) => (
           <>
             <img
-              className='w-full md:px-5 h-50 md:h-80 flex brightness-90 hover:brightness-100 items-center justify-center  object-contain cursor rounded-xl'
+              className='w-full md:px-5 h-50 md:h-80 flex brightness-90 hover:brightness-100 items-center justify-center  object-contain cursor md:rounded-xl'
               key={index}
               src={img}
               onClick={() => setCurrentIndex(index)}
