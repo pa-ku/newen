@@ -3,13 +3,6 @@ import styled from 'styled-components'
 import Title from './Title'
 import { data } from '../data/whyinvest,js'
 
-const GridWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
-
 const GridCtn = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 20em);
@@ -18,6 +11,8 @@ const GridCtn = styled.div`
 
   @media (max-width: 700px) {
     grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    row-gap: 50px;
   }
 `
 
@@ -49,8 +44,8 @@ const Icon = styled.img`
 export default function WhyInvest() {
   return (
     <>
-      <GridWrapper>
-        <GridCtn>
+      <div className='w-full flex items-center justify-center'>
+        <GridCtn className=''>
           {data.map((item) => (
             <>
               <GridItem>
@@ -63,7 +58,7 @@ export default function WhyInvest() {
             </>
           ))}
         </GridCtn>
-      </GridWrapper>
+      </div>
     </>
   )
 }

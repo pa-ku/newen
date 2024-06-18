@@ -29,15 +29,15 @@ function Carousel({ images }) {
   }
 
   return (
-    <div className='relative w-[48em]  duration-200   '>
+    <div className=' relative w-[48em]  duration-200   '>
       <div
-        className='flex  transition-linear duration-500'
+        className='flex transition-linear duration-500'
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {images.map((img, index) => (
           <>
             <img
-              className='w-full px-5 h-80 flex brightness-90 hover:brightness-100 items-center justify-center  object-contain cursor rounded-xl'
+              className='w-full md:px-5 h-50 md:h-80 flex brightness-90 hover:brightness-100 items-center justify-center  object-contain cursor rounded-xl'
               key={index}
               src={img}
               onClick={() => setCurrentIndex(index)}

@@ -34,3 +34,9 @@ border: 3.2px solid #333;
 ::-webkit-scrollbar-thumb:hover {
 background-color: #777;
 }
+
+/* SELECTION */
+::selection {
+color: white;
+background: #2595be80;
+}

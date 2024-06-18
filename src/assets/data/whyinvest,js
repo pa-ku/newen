@@ -1,4 +1,3 @@
-import chart from '../svg/chart.svg'
 import mobile from '../svg/mobile.svg'
 import stars from '../svg/stars.svg'
 import eye from '../svg/eye.svg'

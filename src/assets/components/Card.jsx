@@ -1,31 +1,25 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function Card({ items, price, title, icon }) {
+export default function Card({ items, negativeItems, price, title, icon }) {
   return (
     <>
-      <CardCtn className='animate-chroma py-5'>
+      <CardCtn className='py-5'>
         <Title className='text-green-100'>
           {icon}
           {title}
         </Title>
         <p className='text-gray-300'>{price}</p>
-        <ItemsCtn>
+        <ItemsCtn className='h-60 md:h-72'>
           {items.map((text) => (
             <Item className='text-gray-400'>
-              <svg
-                width='100'
-                height='100'
-                viewBox='0 0 24 24'
-                stroke-width='1.5'
-                stroke='#CFED8E'
-                fill='none'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-              >
-                <path stroke='none' d='M0 0h24v24H0z' fill='none' />
-                <path d='M5 12l5 5l10 -10' />
-              </svg>{' '}
+              <p className='text-[#cfed8e] text-md'> ✔ </p>
+              {text}
+            </Item>
+          ))}
+          {negativeItems.map((text) => (
+            <Item className='text-gray-400'>
+              <p className='font-bold text-red-400 text-md'>✕</p>
               {text}
             </Item>
           ))}
@@ -50,7 +44,6 @@ const ItemsCtn = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  height: 300px;
   padding-top: 20px;
   & svg {
     width: 25px;
