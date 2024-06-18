@@ -1,36 +1,26 @@
 import styled from 'styled-components'
-import newenLogo from './assets/img/newen_icon.png'
+
 import Title from './assets/components/Title'
 import Card from './assets/components/Card'
 import Proyects from './assets/components/Proyects'
 import Contact from './assets/components/Contact'
 import WhyInvest from './assets/components/WhyInvest'
 import Technology from './assets/components/Technology'
+import Header from './assets/components/Header'
 
 export default function App() {
   return (
     <>
-      <header className='flex items-center justify-center bg-gradient-to-t from-[#010d13] to-[#17262f] rounded-b-[50%] rounded-none h-56 md:h-80'>
-        <div>
-          <img
-            className='md:w-[28em] w-72 object-contain w-full py-5'
-            src={newenLogo}
-            alt=''
-          />
-          <p className='text-center text-xl md:text-2xl text-[#cfed8e]'>
-            Tu idea realidad
-          </p>
-        </div>
-      </header>
+      <Header />
       <div className='py-20 space-y-24'>
         <section className='px-2 space-y-20'>
           <Title>Por que invertir en una pagina web?</Title>
           <WhyInvest />
         </section>
 
-        <section className='space-y-20'>
+        <main className='space-y-20'>
           <Title>Nuestros servicios</Title>
-          <CardsCtn className='bg-gradient-to-t from-transparent via-[var(--main-color-400)] to-transparent'>
+          <CardsCtn className='flex-col md:flex-row bg-gradient-to-t from-transparent via-[var(--main-color-400)] to-transparent'>
             <Card
               title={'Sitio estatico'}
               price={'ARS 50.000 - 70.000'}
@@ -110,7 +100,7 @@ export default function App() {
               price={'ARS 200.000 - 300.000'}
             />
           </CardsCtn>
-        </section>
+        </main>
 
         <section className='space-y-20 text-white w-full items-center px-3 flex flex-col'>
           <Title>Que tecnologias utilizamos?</Title>
@@ -118,7 +108,7 @@ export default function App() {
         </section>
 
         <section className='space-y-10'>
-          <Title>Nuestros trabajos</Title>
+          <Title>Trabajos</Title>
           <Proyects />
         </section>
       </div>
@@ -146,5 +136,11 @@ const CardsCtn = styled.main`
   }
   @media (max-width: 700px) {
     flex-direction: column;
+    div:nth-child(1) {
+      border-right: none;
+    }
+    div:nth-child(2) {
+      border-right: none;
+    }
   }
 `
